@@ -41,23 +41,21 @@ npm start
    `.env.local`
    `.env.production.local`
 
-Ejemplo real de estructura:
+Variables esperadas:
 
-```ts
-export const environment = {
-  production: true,
-  appName: 'Latido',
-  firebase: {
-    apiKey: 'AIzaSyExample',
-    authDomain: 'latido-app.firebaseapp.com',
-    projectId: 'latido-app',
-    storageBucket: 'latido-app.firebasestorage.app',
-    messagingSenderId: '1234567890',
-    appId: '1:1234567890:web:abcdef123456',
-    vapidKey: 'BExamplePushKey'
-  }
-};
+```bash
+LATIDO_APP_NAME=Latido
+LATIDO_FIREBASE_API_KEY=REPLACE_FIREBASE_API_KEY
+LATIDO_FIREBASE_AUTH_DOMAIN=REPLACE_FIREBASE_AUTH_DOMAIN
+LATIDO_FIREBASE_PROJECT_ID=REPLACE_FIREBASE_PROJECT_ID
+LATIDO_FIREBASE_STORAGE_BUCKET=REPLACE_FIREBASE_STORAGE_BUCKET
+LATIDO_FIREBASE_MESSAGING_SENDER_ID=REPLACE_FIREBASE_MESSAGING_SENDER_ID
+LATIDO_FIREBASE_APP_ID=REPLACE_FIREBASE_APP_ID
+LATIDO_FIREBASE_VAPID_KEY=
+LATIDO_FIREBASE_MEASUREMENT_ID=
 ```
+
+No subas credenciales reales a GitHub. Este proyecto genera `src/environments/environment.ts` y `src/environments/environment.prod.ts` a partir de esos archivos locales o de variables de entorno del CI.
 
 ## 3. Seguridad Firestore
 
@@ -91,12 +89,12 @@ Antes del build, el proyecto genera automaticamente `src/environments/environmen
 npx firebase-tools login
 ```
 
-2. Cambia `.firebaserc` con tu `projectId` real:
+2. Cambia `.firebaserc` con el `projectId` de tu proyecto:
 
 ```json
 {
   "projects": {
-    "default": "latido-app"
+    "default": "REPLACE_FIREBASE_PROJECT_ID"
   }
 }
 ```
