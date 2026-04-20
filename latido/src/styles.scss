@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+  --latido-surface: rgba(255, 255, 255, 0.82);
+  --latido-primary: #ea5f78;
+  --latido-primary-strong: #d44561;
+  --latido-secondary: #ff9a62;
+  --latido-ink: #4d2931;
+  --latido-muted: #88626b;
+  --latido-border: rgba(212, 107, 129, 0.18);
+  --latido-shadow: 0 24px 70px rgba(212, 91, 117, 0.14);
+  --latido-radius-xl: 28px;
+  --latido-radius-lg: 22px;
+  --latido-radius-md: 16px;
+  --latido-radius-pill: 999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Manrope', sans-serif;
+  color: var(--latido-ink);
+  background:
+    radial-gradient(circle at top left, rgba(255, 207, 134, 0.45), transparent 28%),
+    radial-gradient(circle at top right, rgba(244, 111, 132, 0.17), transparent 34%),
+    linear-gradient(180deg, #fffaf7 0%, #fff2ee 48%, #fff8f4 100%);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.glass-card {
+  background: var(--latido-surface);
+  border: 1px solid var(--latido-border);
+  box-shadow: var(--latido-shadow);
+  backdrop-filter: blur(18px);
+}

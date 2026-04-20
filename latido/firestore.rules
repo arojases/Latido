@@ -1,0 +1,45 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function roomRef(roomId) {
+      return get(/databases/$(database)/documents/rooms/$(roomId));
+    }
+
+    function roomContainsUser(roomId) {
+      return signedIn() && roomRef(roomId).data.participantUids.hasAny([request.auth.uid]);
+    }
+
+    match /rooms/{roomId} {
+      // The client checks whether a room exists before joining it, so it needs
+      // permission to get a single room document while staying unable to list rooms.
+      allow get: if signedIn();
+      allow list: if false;
+
+      allow create: if signedIn()
+        && request.resource.data.participantUids.size() == 1
+        && request.resource.data.participantUids.hasAny([request.auth.uid]);
+
+      allow update: if signedIn()
+        && (
+          roomContainsUser(roomId)
+          || (
+            resource.data.participantUids.size() < 2
+            && request.resource.data.participantUids.hasAny([request.auth.uid])
+          )
+        );
+
+      match /messages/{messageId} {
+        allow read: if roomContainsUser(roomId);
+        allow create: if roomContainsUser(roomId)
+          && request.resource.data.senderId == request.auth.uid
+          && request.resource.data.text is string
+          && request.resource.data.text.size() > 0
+          && request.resource.data.text.size() <= 280;
+      }
+    }
+  }
+}

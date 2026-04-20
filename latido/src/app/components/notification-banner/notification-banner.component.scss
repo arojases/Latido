@@ -1,0 +1,20 @@
+.notification {
+  position: sticky;
+  top: 1rem;
+  z-index: 20;
+  display: inline-grid;
+  gap: 0.25rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--latido-radius-lg);
+}
+
+.notification span {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--latido-muted);
+}
+
+.notification strong {
+  font-size: 0.98rem;
+}

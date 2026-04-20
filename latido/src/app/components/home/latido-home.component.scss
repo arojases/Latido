@@ -1,0 +1,86 @@
+.home {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1rem 0 3rem;
+}
+
+.hero,
+.workspace,
+.chat-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.hero {
+  align-items: start;
+  padding-top: 1rem;
+}
+
+.hero__copy {
+  padding: 2rem 0 0.5rem;
+}
+
+.hero__eyebrow,
+.workspace__eyebrow,
+.hero__label {
+  color: var(--latido-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+}
+
+.hero__copy h1 {
+  margin: 0.6rem 0 1rem;
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.8rem, 7vw, 5.4rem);
+  line-height: 0.97;
+}
+
+.hero__copy p,
+.workspace__summary p {
+  max-width: 62ch;
+  color: var(--latido-muted);
+  font-size: 1.03rem;
+  line-height: 1.75;
+}
+
+.hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.6rem;
+}
+
+.hero__stats span {
+  padding: 0.8rem 1rem;
+  border-radius: var(--latido-radius-pill);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(212, 107, 129, 0.12);
+}
+
+.hero__account,
+.workspace__summary {
+  padding: 1.5rem;
+  border-radius: var(--latido-radius-xl);
+}
+
+.hero__account h2,
+.workspace__summary h3 {
+  margin: 0.4rem 0 0.5rem;
+  font-family: 'Fraunces', serif;
+}
+
+.hero__account button {
+  border: 0;
+  border-radius: var(--latido-radius-pill);
+  padding: 0.9rem 1.1rem;
+  color: white;
+  background: linear-gradient(135deg, var(--latido-primary), var(--latido-primary-strong));
+}
+
+@media (min-width: 900px) {
+  .hero,
+  .workspace {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}

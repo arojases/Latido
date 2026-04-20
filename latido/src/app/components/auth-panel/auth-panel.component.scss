@@ -1,0 +1,81 @@
+.auth-panel {
+  padding: 1.5rem;
+  border-radius: var(--latido-radius-xl);
+}
+
+.auth-panel__header h2 {
+  margin: 0.35rem 0 0.75rem;
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.85rem, 4vw, 2.8rem);
+}
+
+.auth-panel__header p,
+.auth-panel__eyebrow {
+  color: var(--latido-muted);
+}
+
+.auth-panel__eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.auth-panel__tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.auth-panel__tabs button,
+.auth-panel__form button {
+  border: 0;
+  border-radius: var(--latido-radius-pill);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.auth-panel__tabs button {
+  padding: 0.85rem 0.75rem;
+  color: var(--latido-muted);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.auth-panel__tabs button.is-active {
+  color: white;
+  background: linear-gradient(135deg, var(--latido-primary), var(--latido-secondary));
+  box-shadow: 0 14px 30px rgba(234, 95, 120, 0.3);
+}
+
+.auth-panel__form {
+  display: grid;
+  gap: 1rem;
+}
+
+.auth-panel__form label {
+  display: grid;
+  gap: 0.45rem;
+  font-weight: 600;
+}
+
+.auth-panel__form input {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(212, 107, 129, 0.2);
+  border-radius: var(--latido-radius-md);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.auth-panel__form button {
+  padding: 1rem 1.2rem;
+  color: white;
+  background: linear-gradient(135deg, var(--latido-primary), var(--latido-primary-strong));
+}
+
+.auth-panel__error {
+  margin: 1rem 0 0;
+  color: #b12a45;
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="latidoGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff9a62" />
+      <stop offset="100%" stop-color="#ea5f78" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#fff7f2" />
+  <path
+    d="M32 52C16 42 10 34.4 10 24.2C10 16.1 16.2 10 24.1 10C28.9 10 31.8 12.4 32 14.7C32.2 12.4 35.1 10 39.9 10C47.8 10 54 16.1 54 24.2C54 34.4 48 42 32 52Z"
+    fill="url(#latidoGradient)"
+  />
+</svg>

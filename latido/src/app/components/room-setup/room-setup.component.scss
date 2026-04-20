@@ -1,0 +1,75 @@
+.room {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border-radius: var(--latido-radius-xl);
+}
+
+.room__eyebrow,
+.room__copy p,
+.room__tip {
+  color: var(--latido-muted);
+}
+
+.room__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+}
+
+.room__copy h3 {
+  margin: 0.35rem 0 0.5rem;
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+}
+
+.room__form,
+.room__active {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.room__form label {
+  display: grid;
+  gap: 0.45rem;
+  font-weight: 600;
+}
+
+.room__form input {
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--latido-border);
+  border-radius: var(--latido-radius-md);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.room__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.room button {
+  border: 0;
+  border-radius: var(--latido-radius-pill);
+  padding: 0.95rem 1.1rem;
+}
+
+.room button:not(.room__ghost) {
+  color: white;
+  background: linear-gradient(135deg, var(--latido-primary), var(--latido-secondary));
+}
+
+.room__ghost {
+  color: var(--latido-primary-strong);
+  background: rgba(234, 95, 120, 0.1);
+}
+
+.room__active strong {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  letter-spacing: 0.14em;
+}
+
+.room__error {
+  margin: 0;
+  color: #b12a45;
+}

@@ -1,0 +1,12 @@
+<div class="hearts" aria-hidden="true">
+  @for (heart of hearts; track heart.id) {
+    <span
+      class="heart"
+      [style.left.%]="heart.left"
+      [style.animation-delay.ms]="heart.delay"
+      [style.animation-duration.ms]="heart.duration"
+    >
+      ❤
+    </span>
+  }
+</div>
