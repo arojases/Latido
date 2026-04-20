@@ -43,7 +43,7 @@ export class AuthService {
 
   async loginAnonymously(nickname: string): Promise<void> {
     const credential = await signInAnonymously(this.firebase.auth);
-    const safeName = nickname.trim() || 'Latido anónimo';
+    const safeName = nickname.trim() || 'Latido anonimo';
     await updateProfile(credential.user, { displayName: safeName });
   }
 

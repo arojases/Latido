@@ -60,7 +60,7 @@ export class ChatService {
       const participantNames = { ...(existing?.['participantNames'] ?? {}) };
 
       if (!participantUids.includes(user.uid) && participantUids.length >= 2) {
-        throw new Error('Este vínculo ya está completo. Usa otro código privado.');
+        throw new Error('Este vinculo ya esta completo. Usa otro codigo privado.');
       }
 
       participantNames[user.uid] = user.displayName?.trim() || user.email || 'Latido';
@@ -115,7 +115,7 @@ export class ChatService {
   async sendMessage(text: string, user: AuthUser, kind: 'custom' | 'quick' = 'custom'): Promise<void> {
     const roomCode = this.currentRoomCode;
     if (!roomCode) {
-      throw new Error('Primero debes entrar a un vínculo.');
+      throw new Error('Primero debes entrar a un vinculo.');
     }
 
     const content = text.trim();
@@ -136,7 +136,7 @@ export class ChatService {
     await runTransaction(this.firebase.firestore, async (transaction) => {
       const snapshot = await transaction.get(roomRef);
       if (!snapshot.exists()) {
-        throw new Error('La sala ya no está disponible.');
+        throw new Error('La sala ya no esta disponible.');
       }
 
       transaction.update(roomRef, { updatedAt: serverTimestamp() as FieldValue });

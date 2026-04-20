@@ -5,7 +5,7 @@ export const routes: Routes = [
     path: '',
     loadComponent: () =>
       import('./components/home/latido-home.component').then((module) => module.LatidoHomeComponent),
-    title: 'Latido 💖'
+    title: 'Latido'
   },
   {
     path: '**',

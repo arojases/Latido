@@ -59,10 +59,10 @@ export class LatidoHomeComponent {
   );
 
   constructor() {
-    this.title.setTitle('Latido 💖');
+    this.title.setTitle('Latido');
     this.meta.updateTag({
       name: 'description',
-      content: 'Latido te permite enviar detalles y mensajes íntimos en tiempo real.'
+      content: 'Latido te permite enviar detalles y mensajes intimos en tiempo real.'
     });
 
     combineLatest([this.messages$, this.authUser$])
@@ -96,7 +96,7 @@ export class LatidoHomeComponent {
 
   protected async joinRoom(code: string, user: AuthUser | null): Promise<void> {
     if (!user) {
-      this.roomError.set('Primero necesitas iniciar sesión.');
+      this.roomError.set('Primero necesitas iniciar sesion.');
       return;
     }
 
@@ -106,7 +106,7 @@ export class LatidoHomeComponent {
     try {
       await this.chatService.joinRoom(code, user);
     } catch (error) {
-      this.roomError.set(error instanceof Error ? error.message : 'No fue posible entrar al vínculo.');
+      this.roomError.set(error instanceof Error ? error.message : 'No fue posible entrar al vinculo.');
     } finally {
       this.roomBusy.set(false);
     }

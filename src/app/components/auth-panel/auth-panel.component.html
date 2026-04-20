@@ -1,13 +1,13 @@
 <section class="auth-panel glass-card">
   <div class="auth-panel__header">
-    <span class="auth-panel__eyebrow">Tu conexión empieza aquí</span>
+    <span class="auth-panel__eyebrow">Tu conexion empieza aqui</span>
     <h2>Entren a su espacio privado</h2>
-    <p>Accede con correo o entra rápido con un nombre temporal para empezar a latir en tiempo real.</p>
+    <p>Accede con correo o entra rapido con un nombre temporal para empezar a latir en tiempo real.</p>
   </div>
 
   <div class="auth-panel__tabs">
     <button type="button" [class.is-active]="mode() === 'anonymous'" (click)="selectMode('anonymous')">
-      Anónimo
+      Anonimo
     </button>
     <button type="button" [class.is-active]="mode() === 'signin'" (click)="selectMode('signin')">
       Ingresar
@@ -32,13 +32,13 @@
         <input type="email" formControlName="email" placeholder="tu@correo.com" />
       </label>
       <label>
-        Contraseña
-        <input type="password" formControlName="password" placeholder="Mínimo 6 caracteres" />
+        Contrasena
+        <input type="password" formControlName="password" placeholder="Minimo 6 caracteres" />
       </label>
       @if (mode() === 'signup') {
         <label>
           Apodo visible
-          <input type="text" formControlName="nickname" placeholder="Cómo quieres que te vea la otra persona" />
+          <input type="text" formControlName="nickname" placeholder="Como quieres que te vea la otra persona" />
         </label>
       }
 

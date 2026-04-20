@@ -6,9 +6,9 @@
   <section class="hero">
     <div class="hero__copy">
       <span class="hero__eyebrow">Mensajes que se sienten cercanos</span>
-      <h1>Latido convierte un “pensando en ti” en una experiencia viva y compartida.</h1>
+      <h1>Latido convierte un "pensando en ti" en una experiencia viva y compartida.</h1>
       <p>
-        Una aplicación emocional, elegante y privada para que dos personas se envíen cariño en tiempo real
+        Una aplicacion emocional, elegante y privada para que dos personas se envien carino en tiempo real
         desde cualquier lugar.
       </p>
 
@@ -21,10 +21,10 @@
 
     @if (authUser$ | async; as user) {
       <section class="hero__account glass-card">
-        <p class="hero__label">Sesión activa</p>
+        <p class="hero__label">Sesion activa</p>
         <h2>{{ user.displayName || user.email || 'Latido' }}</h2>
-        <p>{{ user.isAnonymous ? 'Modo anónimo' : user.email }}</p>
-        <button type="button" (click)="logout(user)">Cerrar sesión</button>
+        <p>{{ user.isAnonymous ? 'Modo anonimo' : user.email }}</p>
+        <button type="button" (click)="logout(user)">Cerrar sesion</button>
       </section>
     } @else {
       <app-auth-panel />
@@ -43,11 +43,11 @@
       />
 
       <section class="workspace__summary glass-card">
-        <span class="workspace__eyebrow">Conexión actual</span>
+        <span class="workspace__eyebrow">Conexion actual</span>
         <h3>Compartiendo con {{ partnerName$ | async }}</h3>
         <p>
-          Todo se sincroniza al instante con Firebase Firestore. Si la otra persona está dentro del mismo
-          código, verá este mismo historial sin recargar.
+          Todo se sincroniza al instante con Firebase Firestore. Si la otra persona esta dentro del mismo
+          codigo, vera este mismo historial sin recargar.
         </p>
       </section>
     </section>

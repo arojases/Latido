@@ -1,32 +1,32 @@
 <section class="room glass-card">
   <div class="room__copy">
-    <span class="room__eyebrow">Vínculo privado</span>
+    <span class="room__eyebrow">Vinculo privado</span>
     <h3>Conecta a {{ displayName }}</h3>
-    <p>Usen el mismo código para compartir una conversación íntima en tiempo real entre dos personas.</p>
+    <p>Usen el mismo codigo para compartir una conversacion intima en tiempo real entre dos personas.</p>
   </div>
 
   @if (activeCode) {
     <div class="room__active">
-      <p>Están conectados con el código</p>
+      <p>Estan conectados con el codigo</p>
       <strong>{{ activeCode }}</strong>
-      <button type="button" (click)="leaveRoom.emit()">Salir del vínculo</button>
+      <button type="button" (click)="leaveRoom.emit()">Salir del vinculo</button>
     </div>
   } @else {
     <form [formGroup]="form" (ngSubmit)="submit()" class="room__form">
       <label>
-        Código del vínculo
+        Codigo del vinculo
         <input type="text" formControlName="code" placeholder="Ej: SOL-LUNA" />
       </label>
 
       <div class="room__actions">
-        <button type="button" class="room__ghost" (click)="fillGeneratedCode()">Sugerir código</button>
-        <button type="submit" [disabled]="busy">Entrar al vínculo</button>
+        <button type="button" class="room__ghost" (click)="fillGeneratedCode()">Sugerir codigo</button>
+        <button type="submit" [disabled]="busy">Entrar al vinculo</button>
       </div>
     </form>
   }
 
   @if (generatedCode() && !activeCode) {
-    <p class="room__tip">Idea rápida: {{ generatedCode() }}</p>
+    <p class="room__tip">Idea rapida: {{ generatedCode() }}</p>
   }
 
   @if (error) {

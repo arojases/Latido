@@ -2,7 +2,7 @@
   <div class="messages__header">
     <div>
       <span>Historial vivo</span>
-      <h3>Su conversación</h3>
+      <h3>Su conversacion</h3>
     </div>
     <p>{{ messages.length }} mensajes</p>
   </div>
@@ -12,14 +12,14 @@
       <article [@messageIn] class="bubble" [class.bubble--mine]="isMine(message)">
         <p>{{ message.text }}</p>
         <footer>
-          <span>{{ isMine(message) ? 'Tú' : message.senderName }}</span>
+          <span>{{ isMine(message) ? 'Tu' : message.senderName }}</span>
           <time>{{ message.createdAt | date: 'HH:mm' }}</time>
         </footer>
       </article>
     } @empty {
       <div class="messages__empty">
-        <h4>El primer latido todavía no llega</h4>
-        <p>Envía un mensaje para abrir esta conversación compartida.</p>
+        <h4>El primer latido todavia no llega</h4>
+        <p>Envia un mensaje para abrir esta conversacion compartida.</p>
       </div>
     }
   </div>
